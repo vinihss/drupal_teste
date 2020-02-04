@@ -1,0 +1,9 @@
+<?php
+
+function spa_manager_theme($existing, $type, $theme, $path) {
+    return [
+        'slider-block' => [
+            'variables' => ['rows' => NULL],
+    ],
+];
+}

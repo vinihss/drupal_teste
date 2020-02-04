@@ -1,0 +1,11 @@
+{{ attach_library('spa_manager/spamanager-slider') }}
+
+<ul id="lightSlider">
+    {% for row in rows %}
+        <li>
+            <img src="{{ row.imagem }}" >
+            <h3>{{ row.titulo }}</h3>
+            <p>{{ row.descricao }}</p>
+        </li>
+    {% endfor %}
+</ul>

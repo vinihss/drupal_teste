@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - spa_manager
+name: 'SPA Landing Content Type'
+type: spa_page
+description: 'Content type usado para criar pagina do <em>SPA Manager</em>.'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: true

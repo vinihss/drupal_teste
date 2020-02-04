@@ -1,0 +1,37 @@
+spa_manager.content:
+  path: '/spamanager'
+  defaults:
+    _controller: 'Drupal\spa_manager\Controller\SpaController::content'
+    _title: 'SPA Manager'
+  requirements:
+    _permission: 'access content'
+
+spa_manager.slider_manager_form:
+  path: '/spamanager/form/slider'
+  defaults:
+    _form: '\Drupal\spa_manager\Form\SliderManagerForm'
+    _title: 'Slider Manager'
+  requirements:
+    _permission: 'access content administration'
+  options:
+    _admin_route: TRUE
+
+spa_manager.slider_manager_table:
+  path: '/spamanager/slidermanager/table'
+  defaults:
+    _controller: '\Drupal\spa_manager\Controller\SliderManagerController::display'
+    _title: 'display'
+  requirements:
+    _permission: 'access content administration'
+  options:
+    _admin_route: TRUE
+
+spa_manager.slider_manager_delete:
+  path: '/spamanager/form/delete/{cid}'
+  defaults:
+    _form: '\Drupal\spa_manager\Form\SliderManagerDeleteForm'
+    _title: 'DeleteForm'
+  requirements:
+    _permission: 'access content administration'
+  options:
+    _admin_route: TRUE

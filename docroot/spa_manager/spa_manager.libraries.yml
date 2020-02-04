@@ -1,0 +1,10 @@
+spamanager-slider:
+  version: 1.x
+  css:
+    theme:
+      css/lightslider.css: {}
+  js:
+    js/spamanager-slider.js: {}
+    js/lightslider.js: {}
+  dependencies:
+    - core/jquery'
