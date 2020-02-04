@@ -41,5 +41,5 @@ services:
       MYSQL_PASSWORD: drupal
       MYSQL_ROOT_PASSWORD: drupal
     volumes:
-      - ./data:/tmp/db
+      - ./data:/var/lib/mysql
     restart: always
