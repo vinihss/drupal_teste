@@ -1,0 +1,5 @@
+name: SPA Manager Module
+description: Create contents SPA
+package: Custom
+type: module
+core: 8.x

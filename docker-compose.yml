@@ -15,31 +15,32 @@ version: '3.1'
 services:
 
   drupal:
-    image: drupal:8.8.1-apache
+  # imagem drupal oficial com drupal 8.8.2 e apache
+    image: vinihss/teste-drupal
     ports:
       - 8080:80
+    environment:
+      APACHE_RUN_GROUP: staff
     depends_on:
       - mysql
     volumes:
-      - /var/www/html/modules
-      - /var/www/html/profiles
-      - /var/www/html/themes
-      # this takes advantage of the feature in Docker that a new anonymous
-      # volume (which is what we're creating here) will be initialized with the
-      # existing content of the image at the same location
-      - /var/www/html/sites
-      - ./docroot:/var/www/html/modules/custom
+      #- ./bkp:/tmp/bkp
+      - ./docroot/custom/:/var/www/html/modules/custom
+      #- ./docroot/html/:/var/www/html/
+      #- ./docroot/modules:/var/www/html/modules
+      #- ./docroot/sites:/var/www/html/sites
     links:
       - "mysql"
     restart: always
 
   mysql:
     image: mysql:5.7
+    volumes:
+      - ./bkp:/tmp/bkp
+      - ./data/dump.sql:/docker-entrypoint-initdb.d/dump.sql
     environment:
       MYSQL_DATABASE: drupal
       MYSQL_USER: drupal
       MYSQL_PASSWORD: drupal
       MYSQL_ROOT_PASSWORD: drupal
-    volumes:
-      - ./data:/var/lib/mysql
     restart: always

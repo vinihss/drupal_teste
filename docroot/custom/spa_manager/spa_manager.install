@@ -1,0 +1,34 @@
+<?php
+
+function spa_manager_schema() {
+  $schema['slider_item'] = array(
+    'fields' => array(
+      'id'=>array(
+        'type'=>'serial',
+        'not null' => true,
+      ),
+      'titulo'=>array(
+        'type' => 'varchar',
+        'length' => 40,
+        'not null' => true,
+      ),
+      'link'=>array(
+        'type' => 'varchar',
+        'length' => 100,
+        'not null' => true,
+      ),
+      'texto'=>array(
+        'type' => 'text'
+      ),
+      'imagem'=>array(
+        'type' => 'varchar',
+        'length' => 40,
+        'not null' => true,
+      )
+    ),
+    'primary key' => array('id'),
+  );
+
+  return $schema;
+
+}

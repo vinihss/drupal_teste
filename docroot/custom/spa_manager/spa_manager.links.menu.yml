@@ -1,0 +1,6 @@
+spa_manager.admin_settings_slider:
+  title: 'Configuração do Slider'
+  route_name: spa_manager
+  description: 'Configuração do slider'
+  parent: system.admin_config_system
+  weight: 99
